@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-const indexRouter = require("./routes");
+const indexRouter = require("./router");
 
 app.use("/",indexRouter)
 
