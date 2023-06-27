@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/",(req,res) =>{
-    res.send("Hello From UI");
+    res.render("index");
 })
 
 router.get("/converter/:currency1/:currency2/:value", async (req, res) => {

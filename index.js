@@ -1,17 +1,26 @@
 const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
+const ejs = require("ejs");
 
 const app = express();
-const morgan =require("morgan");
+
 const indexRouter = require("./router");
 
 
 
-
+//Setting up the third party middlewares
 //middleware
 // app.use((req,res,next) =>{
 //     console.log("Request received at" + Date.now());
 // });
-app.use(morgan("tiny"));
+app.use(morgan("short"));
+app.use(cors());
+
+//Setting up the EJS Templating
+app.set("view engine","ejs");
+app.set("views","./views");
+
 app.use("/",indexRouter);
 
 
