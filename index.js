@@ -7,7 +7,6 @@ const app = express();
 
 const indexRouter = require("./router")
 
-const indexRouter = require("./router");
 
 
 //Setting up the third party middlewares
@@ -21,6 +20,9 @@ app.use(cors());
 //Setting up the EJS Templating
 app.set("view engine","ejs");
 app.set("views","./views");
+
+//Serving the static files
+app.use(express.static("public"));
 
 app.use("/",indexRouter);
 
