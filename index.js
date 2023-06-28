@@ -5,8 +5,9 @@ const ejs = require("ejs");
 
 const app = express();
 
-const indexRouter = require("./router");
+const indexRouter = require("./router")
 
+const indexRouter = require("./router");
 
 
 //Setting up the third party middlewares
