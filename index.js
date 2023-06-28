@@ -24,7 +24,19 @@ app.set("views","./views");
 //Serving the static files
 app.use(express.static("public"));
 
+//Trying to test the application level error handler
+app.get("/Broken",(req,res)=>{
+    throw new Error("Broken");
+})
+
+
 app.use("/",indexRouter);
+
+//Appplication level error handler
+app.use((err,req,res,next)=>{
+    console.log(err);
+    res.status(500).send("Something Went Wrong");
+})
 
 
 app.listen(8000, () => {// method vitra method call back function
