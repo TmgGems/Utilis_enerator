@@ -6,6 +6,23 @@ router.get("/",(req,res) =>{
     res.render("index");
 })
 
+router.get("/about",(req,res) =>{
+  res.render("about");
+})
+
+router.get("/birds",(req,res) =>{
+  res.render("birds");
+})
+
+router.get("/contact",(req,res) =>{
+  res.render("contact");
+})
+
+router.get("/testimonial",(req,res) =>{
+  res.render("testimonial");
+})
+
+
 router.get("/about",(req,res)=>{
   res.render("contact");
 });
