@@ -7,10 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <form id="contactForm">
+    <form id="contactForm" onSubmit="return formSubmit(e)">
         <input type="text" name="name" placeholder="name"/>
         <button type="submit">Submit</button>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type ="javascript">
+        const contactForm = document.getElementById("contactForm");
+        function formSubmit(event){
+            event.preventDefault();
+            console.log(contactForm);
+        }
+
+    </script>
 </body>
 </html>
