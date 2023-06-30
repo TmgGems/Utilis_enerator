@@ -11,7 +11,7 @@ router.get("/",(req,res,next) =>{
 
 router.post("/form",(req,res,next) =>{
     console.log({data:req.body});
-    res.json({msg:"Hello From APi"});
+    res.json({msg:"Thank You for Submitting"});
 });
 
 module.exports= router;
