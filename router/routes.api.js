@@ -9,4 +9,8 @@ router.get("/",(req,res,next) =>{
     }
 });
 
+router.post("/form",(req,res,next) =>{
+    res.json({msg:"Hello From APi"});
+});
+
 module.exports= router;
