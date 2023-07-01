@@ -1,5 +1,7 @@
 //This is the entry point
 
+//Know How things are interconnected
+
 const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
