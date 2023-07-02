@@ -12,7 +12,7 @@ const morgan = require("morgan");
 
 
 //mongodb connection
-mongoose.connect('mongodb://127.0.0.1:27017/test').then(()=>console.log("DataBase Coneected"));
+mongoose.connect('mongodb://127.0.0.1:27017/test').then(()=>console.log("DataBase Connected"));
 const app = express();
 
 const indexRouter = require("./router");
