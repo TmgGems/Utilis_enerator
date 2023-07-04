@@ -22,3 +22,7 @@ const update = () =>{
 const remove = () =>{
     return Model.deleteOne(id);
 };
+
+module.exports = {create,list,getById,update,remove}
+
+//CRUD Operations
