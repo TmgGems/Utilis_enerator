@@ -6,18 +6,16 @@ const express = require("express");
 const cors = require("cors");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const morgan = require("morgan");
 
-
-
 //mongodb connection
-mongoose.connect('mongodb://localhost:27017/UTILIS_ENERATOR').then(()=>console.log("DataBase Connected"));
+mongoose
+  .connect("mongodb://127.0.0.1:27017/UTILIS_ENERATOR")
+  .then(() => console.log("DataBase Connected"));
 const app = express();
 
 const indexRouter = require("./router");
-
-
 
 //Setting up the third party middlewares
 //middleware
@@ -29,30 +27,29 @@ app.use(cors());
 //Json data structure
 app.use(bodyParser.json());
 //form data capture
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //Setting up the EJS Templating
-app.set("view engine","ejs");
-app.set("views","./views");
+app.set("view engine", "ejs");
+app.set("views", "./views");
 
 //Serving the static files
 app.use(express.static("public"));
 
 //Trying to test the application level error handler
-app.get("/Broken",(req,res)=>{
-    throw new Error("Broken");
-})
+app.get("/Broken", (req, res) => {
+  throw new Error("Broken");
+});
 
-
-app.use("/",indexRouter);
+app.use("/", indexRouter);
 
 //Appplication level error handler
-app.use((err,req,res,next)=>{
-    console.log(err);
-    res.status(500).send("Something Went Wrong");
-})
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(500).send("Something Went Wrong");
+});
 
-
-app.listen(8000, () => {// method vitra method call back function
-    console.log("Server running on port 8000");
-})
+app.listen(8000, () => {
+  // method vitra method call back function
+  console.log("Server running on port 8000");
+});
